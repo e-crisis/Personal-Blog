@@ -1,0 +1,6 @@
+<h1>{{ entry.headline }}</h1>
+
+<body>{{ entry.body_text }}</body>
+<form action="{% url 'blog:edit' entry.id %}" method="get">
+  <input type="submit" value="Edit Post" />
+</form>

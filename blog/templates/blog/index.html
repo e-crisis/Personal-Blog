@@ -1,0 +1,12 @@
+<H1> Personal BLOG </H1>
+<H3>Latest Entries</H3>
+{% if latest_entry_list %}
+    <ul>
+        {% for entry in latest_entry_list %}
+            <li><a href="{% url 'blog:detail' entry.id %}">{{entry.headline}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No blog posts yet.</p>
+    <a href="{% url 'blog:post' %}">Post Something Now</a>
+{% endif %}
