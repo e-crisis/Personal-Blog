@@ -2,6 +2,6 @@
 
 <form action="{% url 'blog:submit_edit' entry.id %}" method="post">
 {% csrf_token %}
-  <input type="text" name="text" value={{entry.body_text}} />
+  <input type="text" name="text" value='{{entry.body_text}}' />
   <input type="submit" name="submit" value="Save" />
 </form>
