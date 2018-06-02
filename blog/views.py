@@ -34,6 +34,7 @@ def edit_entry(request, blog_id):
 def submit_edit_entry(request, blog_id):
     entry = Entry.objects.get(pk=blog_id)
     entry.body_text = request.POST.get('text', "no edit")
+    entry.save()
     return HttpResponseRedirect(reverse('blog:detail', args=(entry.id,)))
 
 
